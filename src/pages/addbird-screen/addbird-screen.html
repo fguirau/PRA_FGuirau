@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar color="primary" hideBackButton>
+    <ion-title><ion-icon name="arrow-back" class="pull-left" (click)="back()"></ion-icon>NUEVA AVE</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <div text-center>
+     <img src="../../assets/imgs/logo.png" class="img-pq"/>
+   </div>
+  <form (ngSubmit)="addBird()" [formGroup]="myForm">
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Nombre del Ave</ion-label>
+      <ion-input type="text" required formControlName="name" [(ngModel)]="newAve.bird_name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Descripción</ion-label>
+      <ion-textarea required formControlName="description" [(ngModel)]="newAve.bird_description" (ionChange)="Comprobar()"></ion-textarea>
+    </ion-item>
+    <ion-item>
+        <ion-label>¿Ha sido visto en...?</ion-label>
+        <ion-checkbox formControlName="placeVisible" [(ngModel)]="newAve.placeVisible" (ionChange)="checkLocation()"></ion-checkbox>
+    </ion-item>
+    <ion-item-group *ngIf="newAve.placeVisible">
+      <ion-item>
+        <ion-label>Lugar</ion-label>
+        <ion-input type="text" formControlName="place" [(ngModel)]="newAve.place" (ionChange)="Comprobar()"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Latitud</ion-label>
+        <ion-input type="text" formControlName="lat" [(ngModel)]="newAve.lat"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Longitud</ion-label>
+        <ion-input type="text" formControlName="long" [(ngModel)]="newAve.long"></ion-input>
+      </ion-item>
+    </ion-item-group>
+  </ion-list>
+    <button ion-button color="primary" type="submit" [disabled]="!myForm.valid || !isActive" block round>NUEVA AVE</button>
+  </form>
+</ion-content>

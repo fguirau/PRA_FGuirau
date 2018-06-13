@@ -1,0 +1,92 @@
+// http://ionicframework.com/docs/theming/
+
+ion-title{
+  text-align: center;
+}
+.flotarRight{
+  float: right;
+  clear: both;
+  margin-bottom: 10px;
+}
+.fila{
+  position: relative;
+  height: 100%;
+}
+.verticalAlign{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  margin: auto;
+}
+.bordeInf{
+  padding-left: 10px !important;
+}
+.fAzulLight{
+  background-color: lightblue;
+}
+.minSpace{
+  margin-right: 0 !important;
+  min-width: 20px !important;
+}
+.pull-right{
+  float: right;
+}
+.pull-left{
+  float: left;
+}
+.toolbar-ios ion-title.mimenu{
+    padding: 0px;
+}
+.toolbar-ios ion-title ion-icon{
+  padding-right: 20px !important;
+  position: absolute;
+  left: 15px;
+}
+.toolbar-ios ion-title ion-icon.pull-right{
+  position: absolute;
+  right: 15px !important;
+  left: auto;
+}
+.newSightingTitle{
+  text-transform: uppercase;
+  font-size: 125%;
+  text-align: center;
+  color:#488aff;
+}
+.fondoBlanco{
+  background-color: white !important;
+}
+.list-header-md, .list-ios > .item-block:first-child  {
+  border-top: none;
+}
+ion-list-header{
+  border-bottom: 1px solid #0099e6 !important;
+}
+.list-md .item-block .item-inner, .list-ios .item-block .item-inner{
+  border-bottom: 1px solid #80d4ff !important;
+}
+.list-ios > .item-block:last-child, .list-md .item-input:last-child {
+  border-bottom: none !important;
+}
+.card-ios p, .card-md p{
+  text-align: justify;
+}
+.addPaddingBottom{
+  padding-bottom: 25px;
+}
+.list-header-ios, .list-header-md{
+  font-size: 1.2rem;
+font-weight: 500;
+letter-spacing: 0.1rem;
+text-transform: uppercase;
+color: #488aff;
+}
+.item-input .label-md{
+  color: #000;
+}
+.img-pq{
+  width:25%;
+}

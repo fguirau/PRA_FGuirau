@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar color="primary" hideBackButton>
+    <ion-title><ion-icon name="arrow-back" class="pull-left" (click)="back()"></ion-icon>LISTADO DE AVES</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-list>
+      <ion-list-header><h1 text-center>Listado de Aves</h1></ion-list-header>
+      <ion-item *ngFor ="let bird of birdList;" (click)="viewBird(bird.id)">
+        <ion-avatar item-start>
+          <img src="{{bird.bird_image}}">
+        </ion-avatar>
+        <h2>{{bird.bird_name}}</h2>
+        <ion-badge *ngIf="bird.mine === 0" color="danger" item-end>{{bird.bird_sightings}}</ion-badge>
+        <ion-badge *ngIf="bird.mine != 0" color="secondary" item-end>{{bird.bird_sightings}}</ion-badge>
+      </ion-item>
+    </ion-list>
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar color="primary" hideBackButton>
+    <ion-title class="mimenu">
+      AVES APP
+      <ion-icon name="contact" class="pull-right" (click)="infoUser()"></ion-icon>
+    </ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="fila">
+  <ion-grid class="verticalAlign">
+    <ion-row>
+      <ion-col col12>
+        <button ion-button color="primary" (click)="birdsList()" block round>LISTADO DE AVES</button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col12>
+        <button ion-button color="primary" (click)="addBird()" block round>AÑADIR AVE</button>
+      </ion-col>
+    </ion-row>
+  <ion-row>
+    <ion-col col12>
+      <button ion-button color="primary" block round>INFO</button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col12>
+      <button ion-button color="primary" (click)="logout()" block round>DESCONECTAR</button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</div>
+</ion-content>

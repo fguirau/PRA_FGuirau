@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar color="primary" hideBackButton>
+    <ion-title class="mimenu"><ion-icon name="arrow-back" class="pull-left" (click)="back()"></ion-icon>{{bird.bird_name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-card>
+    <img src="{{bird.bird_image}}"/>
+    <ion-card-content class="addPaddingBottom">
+      <ion-card-title>{{bird.bird_name}}</ion-card-title>
+      <p>{{bird.bird_description}}</p>
+      <ion-badge color="secondary" item-end class="flotarRight">{{bird.bird_sightings}}</ion-badge>
+    </ion-card-content>
+    <ion-card-content class="fondoBlanco">
+      <ion-item-group>
+        <ion-item-divider class="fAzulLight">
+          <h3>AVISTAMIENTOS</h3>
+          <button ion-button outline item-end icon-left (click)="addSighting()" round>
+            <ion-icon name="add-circle"></ion-icon> AÑADIR
+          </button>
+        </ion-item-divider>
+      </ion-item-group>
+        <ion-list>
+          <ion-item class="bordeInf fondoBlanco" *ngFor ="let sighting of bird.sightings_list">
+              <ion-avatar item-start class="minSpace"><ion-icon name="pin"></ion-icon></ion-avatar>
+                <h2><strong>{{sighting.place}}</strong></h2>
+                <p><small>({{sighting.lat}}, {{sighting.long}})</small></p>
+          </ion-item>
+        </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

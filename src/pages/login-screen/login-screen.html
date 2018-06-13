@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar color="primary" hideBackButton>
+    <ion-title>
+      Aves App
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="todo" (ngSubmit)="ComprobarLogin()" #LoginForm="ngForm">
+    <ion-row>
+        <ion-col></ion-col>
+        <ion-col col-6><img src="../../assets/imgs/logo.png" class="img-responsive"/></ion-col>
+        <ion-col></ion-col>
+    </ion-row>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>E-mail</ion-label>
+      <ion-input type="text" required formControlName="email" [(ngModel)]="loginCredentials.email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" required formControlName="password" [(ngModel)]="loginCredentials.password"></ion-input>
+    </ion-item>
+  </ion-list>
+    <button ion-button color="primary" type="submit" block round [disabled]="!todo.valid">LOGIN</button>
+</form>
+</ion-content>

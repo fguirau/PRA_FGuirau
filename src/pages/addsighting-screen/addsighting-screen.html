@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>NUEVO AVISTAMIENTO</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <h2 class="newSightingTitle">Avistamiento de {{bird.bird_name}} </h2>
+    <form [formGroup]="todo" (ngSubmit)="addSightingForm()">
+      <ion-list>
+        <ion-item>
+          <ion-label floating>Lugar</ion-label>
+            <ion-input type="text" formControlName="place" [(ngModel)]="sightingPlace.place"></ion-input>
+          </ion-item>
+      <ion-item>
+        <ion-label floating>Latitud</ion-label>
+        <ion-input type="text" formControlName="lat" [(ngModel)]="sightingPlace.lat"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Longitud</ion-label>
+        <ion-input type="text" formControlName="long" [(ngModel)]="sightingPlace.long"></ion-input>
+      </ion-item>
+      </ion-list>
+      <button ion-button block type="submit" [disabled]="!todo.valid" round>Crear Avistamiento</button>
+    </form>
+</ion-content>
